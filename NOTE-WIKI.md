@@ -15,3 +15,22 @@ attaccata dal ripulitore.
   range 0-100.
 - Nessuna dipendenza da altre classi: Stanza non sa nulla di Casa,
   Personaggio o Ripulitore — è una classe di dominio "pura".
+
+
+(sto usando l'AI per l'aiuto nell'utilizzo di arrayList, che fino ad ora non avevo mai affrontato nel codice)
+
+## Casa (model)
+
+**Responsabilità:** contiene un insieme di Stanza, sa dire se è
+completamente colorata, e fornisce le stanze ancora attaccabili dal
+ripulitore.
+
+**Decisioni chiave:**
+- Usa List<Stanza> invece di un array, per non fissare un numero
+  rigido di stanze.
+- getStanze() restituisce una copia superficiale (shallow copy) della
+  lista: protegge la struttura interna da aggiunte/rimozioni esterne,
+  ma le singole Stanza restituite restano gli oggetti veri (si possono
+  ancora modificare, es. per i test).
+- stanzeAttaccabili() delega la decisione a Stanza.isAttaccabile() —
+  Casa non duplica quella logica, solo la usa.
