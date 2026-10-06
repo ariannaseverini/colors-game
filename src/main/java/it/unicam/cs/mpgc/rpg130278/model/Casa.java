@@ -7,6 +7,7 @@ public class Casa {
     private String nome;
 
     public Casa(String nome, int numStanze) {
+        if(nome == null || numStanze < 0) throw new IllegalArgumentException("Parametri non validi");
         this.nome = nome;
         for (int i = 0; i < numStanze; i++) {
             stanze.add(new Stanza());
