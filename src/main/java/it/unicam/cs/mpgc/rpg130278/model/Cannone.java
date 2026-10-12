@@ -10,4 +10,7 @@ public class Cannone {
     public void aumentaPotenza(){
         this.potenzaAttuale += 10;
     }
+    public int getPotenzaAttuale(){
+        return potenzaAttuale;
+    }
 }

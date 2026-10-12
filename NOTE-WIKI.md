@@ -34,3 +34,17 @@ ripulitore.
   ancora modificare, es. per i test).
 - stanzeAttaccabili() delega la decisione a Stanza.isAttaccabile() —
   Casa non duplica quella logica, solo la usa.
+
+## Cannone (model)
+
+**Responsabilità:** rappresenta lo strumento del personaggio e tiene
+la sua potenza di colorazione attuale.
+
+**Decisioni chiave:**
+- La potenza iniziale è un parametro del costruttore, non un valore
+  fisso: cannoni diversi possono partire con potenze diverse.
+- aumentaPotenza() incrementa di un valore fisso (+10). Scelta
+  volutamente semplice: se serviranno potenziamenti di entità diversa
+  (power-up), si aggiungerà un parametro.
+- Nessun tetto massimo alla potenza per ora, da rivalutare quando si
+  bilancerà il gioco.
